@@ -36,3 +36,10 @@ Il progetto utilizza un'architettura layered costiutita da tre strati:
 #### Persistenza
 
 - Il database utilizzato è MySql in localhost in particolare è stata sfruttata l'interfaccio PhPMyAdmin
+
+## Avvio della piattaforma:
+
+- Eseguire il dump unicam_manager_dump.sql per importare le tabelle del database
+- Scaricare Xampp e assicurarsi di avere Apache e MySqlServer attivi
+- Indirizzo della piattaforma in locale: http://localhost/unicamManager/
+- Dati di accesso come admin Username -> admin Password -> admin
