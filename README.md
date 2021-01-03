@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-<img src="https://forthebadge.com/images/badges/made-with-php.svg"/>
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
   <img src="https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg"/>
   <img src="https://forthebadge.com/images/badges/built-with-love.svg"/><br></br>
     <b>UnicamManager</b>, progetto realizzato in <b>PHP</b> con l'ausilio di <b>AdminLte 3</b> per il corso di laurea <b>L-31</b> presso <b>Unicam</b>, <i>nell'anno accademico 2019/2020</i>, realizzato dallo studente <b>Samuele Galasso</b>
