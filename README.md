@@ -37,7 +37,7 @@ Il progetto utilizza un'architettura layered costiutita da tre strati:
 
 - Il database utilizzato è MySql in localhost in particolare è stata sfruttata l'interfaccio PhPMyAdmin
 
-## Avvio della piattaforma:
+## Avvio dell'applicazione:
 
 - Eseguire il dump unicam_manager_dump.sql per importare le tabelle del database
 - Scaricare Xampp e assicurarsi di avere Apache e MySqlServer attivi
