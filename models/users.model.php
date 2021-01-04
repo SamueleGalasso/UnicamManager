@@ -23,19 +23,6 @@ class UsersModel
         }
     }
 
-    /*=============================================
-    SHOW USER RESPONSIBLE
-    =============================================*/
-
-    static public function MdlShowUserResponsible($tableUsers, $item, $item1, $value, $value1)
-    {
-        $stmt = Connection::connect()->prepare("SELECT * FROM $tableUsers WHERE $item = :$item && $item1 = :$item1");
-        $stmt->bindParam(":" . $item, $value, PDO::PARAM_STR);
-        $stmt->bindParam(":" . $item1, $value1, PDO::PARAM_BOOL);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-
 
     /*=============================================
     ADD USER
