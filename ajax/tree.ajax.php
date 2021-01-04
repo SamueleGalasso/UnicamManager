@@ -26,17 +26,19 @@ class TreeAjax
     public static function getPlans()
     {
         return [
-            "text" => "Piani Annuali",
+            "text" => "<B>Piani Annuali</B>",
             "parent" => "#",
             "data" => ["url" => "plans"],
+            "icon" => "glyphicon glyphicon-folder-open",
             "children" => array_map(function ($e) {
                 return [
                     "id" => $e["id"],
                     "text" => $e["title"],
                     "data" => ["url" => "plans?id=$e[id]"],
+                    "icon" => "fa fa-bookmark",
                     "children" => [
-                        ["text" => "Azioni Organizzative", "data" => ["url" => "objectives"], "children" => true, "depth" => 0],
-                        ["text" => "Obiettivi", "data" => ["url" => "objectivesUniversita"], "children" => true, "depth" => 1]
+                        ["text" => "<B>Azioni Organizzative</B>", "data" => ["url" => "objectives"], "icon" => "glyphicon glyphicon-folder-open", "children" => true, "depth" => 0],
+                        ["text" => "<B>Obiettivi</B>", "data" => ["url" => "objectivesUniversita"], "icon" => "glyphicon glyphicon-folder-open", "children" => true, "depth" => 1]
                     ]
                 ];
             }, ControllerPlans::ctrShowPlans(null, null))];
@@ -49,7 +51,8 @@ class TreeAjax
                 "id" => $e["id"],
                 "text" => $e["title"],
                 "data" => ["url" => "objectivesUniversita"],
-                "children" => [["text" => "Target Università", "data" => ["url" => "targetsUniversita"], "children" => true, "depth" => 2]]
+                "icon" => "fa fa-arrows",
+                "children" => [["text" => "<B>Target Università</B>", "icon" => "glyphicon glyphicon-folder-open", "data" => ["url" => "targetsUniversita"], "children" => true, "depth" => 2]]
             ];
         }, ControllerObjectivesUniversita::ctrShowObjectivesUniversita("idPlan", $idPlan));
     }
@@ -61,7 +64,8 @@ class TreeAjax
                 "id" => $e["id"],
                 "text" => $e["title"],
                 "data" => ["url" => "objectives?id=$e[id]"],
-                "children" => [["text" => "Target", "data" => ["url" => "targets"], "children" => true, "depth" => 3]]
+                "icon" => "fa fa-thumb-tack",
+                "children" => [["text" => "<B>Target</B>", "icon" => "glyphicon glyphicon-folder-open", "data" => ["url" => "targets"], "children" => true, "depth" => 3]]
             ];
         }, ControllerObjectives::ctrShowObjectivesByPlan($idPlan));
     }
@@ -73,7 +77,8 @@ class TreeAjax
                 "id" => $e["id"],
                 "text" => $e["name"],
                 "data" => ["url" => "targetsUniversita"],
-                "children" => [["text" => "Indicatori Università", "data" => ["url" => "indicatorsUniversita"], "children" => true, "depth" => 4]]
+                "icon" => "fa fa-bell",
+                "children" => [["text" => "<B>Indicatori Università</B>", "icon" => "glyphicon glyphicon-folder-open", "data" => ["url" => "indicatorsUniversita"], "children" => true, "depth" => 4]]
             ];
         }, ControllerTargetUniversita::ctrShowTargetsUniversitaByObj($idObj));
     }
@@ -85,7 +90,8 @@ class TreeAjax
                 "id" => $e["id"],
                 "text" => $e["name"],
                 "data" => ["url" => "targets?id=$e[id]"],
-                "children" => [["text" => "Indicatori", "data" => ["url" => "indicators"], "children" => true, "depth" => 5]]
+                "icon" => "fa fa-hand-pointer-o",
+                "children" => [["text" => "<B>Indicatori</B>", "icon" => "glyphicon glyphicon-folder-open", "data" => ["url" => "indicators"], "children" => true, "depth" => 5]]
             ];
         }, ControllerTarget::ctrShowTargetsByObj($idObj));
     }
@@ -93,14 +99,14 @@ class TreeAjax
     public static function getIndicatorUniversitaByTarget($idTarget)
     {
         return array_map(function ($e) use ($idTarget) {
-            return ["id" => $e["id"], "text" => $e["name"], "data" => ["url" => "indicatorsUniversita"]];
+            return ["id" => $e["id"], "text" => $e["name"], "icon" => "fa fa-gamepad", "data" => ["url" => "indicatorsUniversita"]];
         }, ControllerIndicatorsUniversita::ctrShowIndicatorsUniversitaByTarget($idTarget));
     }
 
     public static function getIndicatorByTarget($idTarget)
     {
         return array_map(function ($e) use ($idTarget) {
-            return ["id" => $e["id"], "text" => $e["name"], "data" => ["url" => "indicators"]];
+            return ["id" => $e["id"], "text" => $e["name"], "icon" => "fa fa-beer", "data" => ["url" => "indicators"]];
         }, ControllerIndicators::ctrShowIndicatorsByTarget($idTarget));
     }
 
